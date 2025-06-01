@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Menu,
   X,
@@ -18,19 +18,25 @@ import {
   Award,
   BookOpen,
   Trophy,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { ThemeToggle } from "@/components/theme-toggle"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 },
-}
+};
 
 const staggerContainer = {
   animate: {
@@ -38,61 +44,95 @@ const staggerContainer = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 
 const skills = [
   {
     name: "Frontend Development",
     icon: Code2,
-    description: "HTML5, CSS3, JavaScript, React.js, Bootstrap, Tailwind CSS",
+    description: "HTML, CSS, JavaScript, React.js, Bootstrap, Tailwind CSS",
   },
-  { name: "Backend Development", icon: Database, description: "Node.js, Express.js, MongoDB, SQL" },
-  { name: "Programming Languages", icon: Palette, description: "Java, JavaScript, Redux" },
-  { name: "Developer Tools", icon: Smartphone, description: "VS Code, Dev C++, Git, GitHub" },
-]
+  {
+    name: "Backend Development",
+    icon: Database,
+    description: "Node.js, Express.js, MongoDB, Mongoose , Prisma, AWS", 
+  },
+  {
+    name: "Programming Languages",
+    icon: Palette,
+    description: "Java, JavaScript, Redux, C, Cpp",
+  },
+  {
+    name: "Developer Tools",
+    icon: Smartphone,
+    description: "VS Code, Dev C++, Git, GitHub, Postman ",
+  },
+];
 
 const projects = [
   {
     title: "Full Stack Edtech Platform",
     description:
       "Built a responsive platform for buying and studying courses, and for instructors to create and manage courses.",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/SN.png?height=200&width=300",
     tech: ["React", "Node.js", "MongoDB", "Payment Gateway"],
-    github: "#",
-    live: "#",
-    features: "Role-based user access, course creation, secure payment gateway, analytics dashboard",
+    github: "https://github.com/mdshahbaz-9/Study-Notion",
+    live: "https://study-notion-lilac.vercel.app/",
+    features:
+      "Role-based user access, course creation, secure payment gateway, analytics dashboard",
   },
   {
-    title: "Portfolio Website",
+    title: "Aspire U - Website",
     description:
-      "Developed responsive portfolio website upgraded to PWA that can be installed and used as an app on any device.",
-    image: "/placeholder.svg?height=200&width=300",
-    tech: ["HTML", "CSS", "JavaScript", "PWA"],
+      "Developed a modern, responsive website for Aspire U, an educational platform, using React.js and Tailwind CSS.",
+    image: "/aspireu.png?height=200&width=300",
+    tech: ["React.js", "CSS", "TailwindCSS", "JavaScript", "React Router"],
     github: "https://github.com/mdshahbaz-9",
-    live: "https://mdshahbaz-9.github.io/Portfolio-Website/",
+    live: "https://aspire-u.vercel.app/",
   },
   {
     title: "Ecommerce Website",
-    description: "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
+    description:
+      "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
     image: "/placeholder.svg?height=200&width=300",
     tech: ["React", "Redux Toolkit", "JavaScript"],
     github: "#",
     live: "#",
   },
-]
+  {
+    title: "Ecommerce Website",
+    description:
+      "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
+    image: "/placeholder.svg?height=200&width=300",
+    tech: ["React", "Redux Toolkit", "JavaScript"],
+    github: "#",
+    live: "#",
+  },
+  {
+    title: "Ecommerce Website",
+    description:
+      "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
+    image: "/placeholder.svg?height=200&width=300",
+    tech: ["React", "Redux Toolkit", "JavaScript"],
+    github: "#",
+    live: "#",
+  },
+];
 
 const moreProjects = [
   {
     title: "Eco-friendly Landing Page",
-    description: "Landing page for eco-friendly website with modern design and responsive layout.",
+    description:
+      "Landing page for eco-friendly website with modern design and responsive layout.",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     live: "https://mdshahbaz-9.github.io/Landing-page-of-Eco-friendly-Website/",
   },
   {
     title: "Weather App",
-    description: "Weather app using Vanilla JS and OpenWeather API showing weather based on location and user input.",
+    description:
+      "Weather app using Vanilla JS and OpenWeather API showing weather based on location and user input.",
     tech: ["JavaScript", "API Integration", "HTML", "CSS"],
-    live: "#",
+    live: "https://weather-app-rosy-psi-28.vercel.app/",
   },
   {
     title: "Todo List App",
@@ -101,15 +141,15 @@ const moreProjects = [
     tech: ["JavaScript", "Bootstrap", "LocalStorage", "DOM"],
     live: "#",
   },
-]
+];
 
 export default function Portfolio() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-    setIsMenuOpen(false)
-  }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -120,23 +160,36 @@ export default function Portfolio() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-2xl font-bold text-primary"
+              className="text-2xl font-bold text-primary hover:text-primary cursor-pointer transition-colors  "
+              onClick={() => scrollToSection("about")}
             >
               Md Shahbaz
             </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection("about")} className="hover:text-primary transition-colors">
+              <button
+                onClick={() => scrollToSection("about")}
+                className="hover:text-primary transition-colors"
+              >
                 About
               </button>
-              <button onClick={() => scrollToSection("skills")} className="hover:text-primary transition-colors">
+              <button
+                onClick={() => scrollToSection("skills")}
+                className="hover:text-primary transition-colors"
+              >
                 Skills
               </button>
-              <button onClick={() => scrollToSection("projects")} className="hover:text-primary transition-colors">
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="hover:text-primary transition-colors"
+              >
                 Projects
               </button>
-              <button onClick={() => scrollToSection("contact")} className="hover:text-primary transition-colors">
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="hover:text-primary transition-colors"
+              >
                 Contact
               </button>
               <ThemeToggle />
@@ -145,8 +198,16 @@ export default function Portfolio() {
             {/* Mobile Navigation */}
             <div className="md:hidden flex items-center space-x-2">
               <ThemeToggle />
-              <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
               </Button>
             </div>
           </div>
@@ -188,7 +249,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero/About Section */}
-      <section id="about" className="pt-24 pb-16">
+      <section id="about" className="pt-24 pb-16 min-h-screen">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -201,18 +262,33 @@ export default function Portfolio() {
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
                   Hi, I'm <span className="text-primary">Md Shahbaz</span>
                 </h1>
-                <h2 className="text-2xl md:text-3xl text-muted-foreground mb-4">Full Stack Developer</h2>
+                <h2 className="text-2xl md:text-3xl text-muted-foreground mb-4">
+                  Full Stack Developer
+                </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  I'm looking towards challenging and responsible working environment where I can serve and improve my
-                  knowledge and skills for the betterment of the company and self.
+                  I'm looking towards challenging and responsible working
+                  environment where I can serve and improve my knowledge and
+                  skills for the betterment of the company and self.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="w-full sm:w-auto">
-                    Download Resume
-                  </Button>
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-                    <a href="https://leetcode.com/u/Shahbaz01/" target="_blank" rel="noopener noreferrer">
+                  <a href="/sh_Resume.pdf" download>
+                    <Button size="lg" className="w-full sm:w-auto">
+                      Download Resume
+                    </Button>
+                  </a>
+
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto"
+                    asChild
+                  >
+                    <a
+                      href="https://leetcode.com/u/Shahbaz01/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink className="mr-2 h-4 w-4" />
                       LeetCode Profile
                     </a>
@@ -229,7 +305,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20">
                   <img
-                    src="/placeholder.svg?height=320&width=320"
+                    src="/shz.jpg?height=320&width=320"
                     alt="Md Shahbaz Profile"
                     className="w-full h-full object-cover"
                   />
@@ -251,7 +327,9 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Skills & Expertise
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Technologies and tools I work with to bring ideas to life
             </p>
@@ -266,7 +344,10 @@ export default function Portfolio() {
           >
             {skills.map((skill, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <motion.div whileHover={{ y: -10 }} transition={{ type: "spring", stiffness: 300 }}>
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <Card className="h-full overflow-hidden border-b-4 border-transparent hover:border-primary transition-all duration-300 group">
                     <CardHeader className="text-center">
                       <motion.div
@@ -275,10 +356,14 @@ export default function Portfolio() {
                       >
                         <skill.icon className="h-8 w-8 text-primary" />
                       </motion.div>
-                      <CardTitle className="group-hover:text-primary transition-colors">{skill.name}</CardTitle>
+                      <CardTitle className="group-hover:text-primary transition-colors">
+                        {skill.name}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground text-center text-sm">{skill.description}</p>
+                      <p className="text-muted-foreground text-center text-sm">
+                        {skill.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -297,7 +382,9 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Featured Projects
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               A showcase of my recent work and personal projects
             </p>
@@ -313,7 +400,10 @@ export default function Portfolio() {
           >
             {projects.map((project, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <motion.div whileHover={{ y: -10 }} transition={{ type: "spring", stiffness: 300 }}>
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group border-b-4 border-transparent hover:border-primary h-full">
                     <div className="relative overflow-hidden">
                       <motion.img
@@ -324,13 +414,21 @@ export default function Portfolio() {
                       />
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                         <Button size="sm" variant="secondary" asChild>
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <Github className="h-4 w-4 mr-2" />
                             Code
                           </a>
                         </Button>
                         <Button size="sm" asChild>
-                          <a href={project.live} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <ExternalLink className="h-4 w-4 mr-2" />
                             Live
                           </a>
@@ -338,9 +436,15 @@ export default function Portfolio() {
                       </div>
                     </div>
                     <CardHeader>
-                      <CardTitle className="group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                      <CardTitle className="group-hover:text-primary transition-colors">
+                        {project.title}
+                      </CardTitle>
                       <CardDescription>{project.description}</CardDescription>
-                      {project.features && <p className="text-sm text-muted-foreground mt-2">{project.features}</p>}
+                      {project.features && (
+                        <p className="text-sm text-muted-foreground mt-2">
+                          {project.features}
+                        </p>
+                      )}
                     </CardHeader>
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
@@ -358,11 +462,20 @@ export default function Portfolio() {
           </motion.div>
 
           {/* Additional Projects */}
-          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h3 className="text-2xl font-bold mb-6 text-center">More Projects</h3>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold mb-6 text-center">
+              More Projects
+            </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {moreProjects.map((project, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 group">
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-all duration-300 group"
+                >
                   <CardHeader>
                     <CardTitle className="group-hover:text-primary transition-colors text-lg">
                       {project.title}
@@ -372,13 +485,21 @@ export default function Portfolio() {
                   <CardContent>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs">
+                        <Badge
+                          key={techIndex}
+                          variant="outline"
+                          className="text-xs"
+                        >
                           {tech}
                         </Badge>
                       ))}
                     </div>
                     <Button size="sm" variant="outline" asChild>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="h-3 w-3 mr-2" />
                         View Project
                       </a>
@@ -406,14 +527,24 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold">Bachelor of Computer Application</h4>
-                  <p className="text-muted-foreground">Aisect University, Hazaribagh (JH)</p>
-                  <p className="text-sm text-muted-foreground">2022 - 2025 | CGPA: 8.18</p>
+                  <h4 className="font-semibold">
+                    Bachelor of Computer Application
+                  </h4>
+                  <p className="text-muted-foreground">
+                    Aisect University, Hazaribagh (JH)
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    2022 - 2025 | CGPA: 8.18
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-semibold">Intermediate of Science</h4>
-                  <p className="text-muted-foreground">RM MM +2 HS Koderma (Jharkhand)</p>
-                  <p className="text-sm text-muted-foreground">2019 - 2021 | 70.4%</p>
+                  <p className="text-muted-foreground">
+                    RM MM +2 HS Koderma (Jharkhand)
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    2019 - 2021 | 70.4%
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -428,8 +559,12 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold">Tech Manager at TechFest (2024)</h4>
-                  <p className="text-muted-foreground">Certificate of Appreciation from Aisect University</p>
+                  <h4 className="font-semibold">
+                    Tech Manager at TechFest (2024)
+                  </h4>
+                  <p className="text-muted-foreground">
+                    Certificate of Appreciation from Aisect University
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-semibold">Java Certification</h4>
@@ -445,7 +580,9 @@ export default function Portfolio() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Open Source Contributor</h4>
-                  <p className="text-muted-foreground">Contributing to GitHub projects for real-world experience</p>
+                  <p className="text-muted-foreground">
+                    Contributing to GitHub projects for real-world experience
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -462,9 +599,12 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Get In Touch
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? I'd love to hear from you!
+              Have a project in mind or want to collaborate? I'd love to hear
+              from you!
             </p>
           </motion.div>
 
@@ -501,11 +641,18 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-4 gap-8">
             {/* About Column */}
             <div className="md:col-span-2">
-              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-                <h3 className="text-2xl font-bold text-primary mb-4">Md Shahbaz</h3>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold text-primary mb-4">
+                  Md Shahbaz
+                </h3>
                 <p className="text-muted-foreground mb-4 max-w-md">
-                  Full Stack Developer passionate about creating innovative web solutions. Always eager to learn new
-                  technologies and contribute to meaningful projects.
+                  Full Stack Developer passionate about creating innovative web
+                  solutions. Always eager to learn new technologies and
+                  contribute to meaningful projects.
                 </p>
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex items-center">
@@ -526,16 +673,26 @@ export default function Portfolio() {
 
             {/* Quick Links */}
             <div>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2 text-muted-foreground">
                   <li>
-                    <button onClick={() => scrollToSection("about")} className="hover:text-primary transition-colors">
+                    <button
+                      onClick={() => scrollToSection("about")}
+                      className="hover:text-primary transition-colors"
+                    >
                       About
                     </button>
                   </li>
                   <li>
-                    <button onClick={() => scrollToSection("skills")} className="hover:text-primary transition-colors">
+                    <button
+                      onClick={() => scrollToSection("skills")}
+                      className="hover:text-primary transition-colors"
+                    >
                       Skills
                     </button>
                   </li>
@@ -548,7 +705,10 @@ export default function Portfolio() {
                     </button>
                   </li>
                   <li>
-                    <button onClick={() => scrollToSection("contact")} className="hover:text-primary transition-colors">
+                    <button
+                      onClick={() => scrollToSection("contact")}
+                      className="hover:text-primary transition-colors"
+                    >
                       Contact
                     </button>
                   </li>
@@ -558,7 +718,11 @@ export default function Portfolio() {
 
             {/* Social Links */}
             <div>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold mb-4">Connect With Me</h4>
                 <div className="space-y-3">
                   <motion.a
@@ -613,7 +777,8 @@ export default function Portfolio() {
                 viewport={{ once: true }}
                 className="text-muted-foreground text-sm mb-4 md:mb-0"
               >
-                &copy; 2024 Md Shahbaz. All rights reserved. Built with ❤️ using React & Next.js
+                &copy; 2024 Md Shahbaz. All rights reserved. Built with ❤️ using
+                React & Next.js
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -635,5 +800,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
