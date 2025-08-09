@@ -71,13 +71,13 @@ const skills = [
 
 const projects = [
   {
-    title: "Full Stack Edtech Platform",
+    title: "E-Shiksha – Full-Stack LMS",
     description:
       "Built a responsive platform for buying and studying courses, and for instructors to create and manage courses.",
-    image: "/SN.png?height=200&width=300",
+    image: "/eShiksha.png?height=200&width=300",
     tech: ["React", "Node.js", "MongoDB", "Payment Gateway"],
-    github: "https://github.com/mdshahbaz-9/Study-Notion",
-    live: "https://study-notion-lilac.vercel.app/",
+    github: "https://github.com/mdshahbaz-9/E-Shiksha",
+    live: "https://e-shiksha-v8yj.vercel.app/",
     features:
       "Role-based user access, course creation, secure payment gateway, analytics dashboard",
   },
@@ -99,24 +99,24 @@ const projects = [
     github: "#",
     live: "#",
   },
-  {
-    title: "Ecommerce Website",
-    description:
-      "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
-    image: "/placeholder.svg?height=200&width=300",
-    tech: ["React", "Redux Toolkit", "JavaScript"],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Ecommerce Website",
-    description:
-      "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
-    image: "/placeholder.svg?height=200&width=300",
-    tech: ["React", "Redux Toolkit", "JavaScript"],
-    github: "#",
-    live: "#",
-  },
+  // {
+  //   title: "Ecommerce Website",
+  //   description:
+  //     "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
+  //   image: "/placeholder.svg?height=200&width=300",
+  //   tech: ["React", "Redux Toolkit", "JavaScript"],
+  //   github: "#",
+  //   live: "#",
+  // },
+  // {
+  //   title: "Ecommerce Website",
+  //   description:
+  //     "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
+  //   image: "/placeholder.svg?height=200&width=300",
+  //   tech: ["React", "Redux Toolkit", "JavaScript"],
+  //   github: "#",
+  //   live: "#",
+  // },
 ];
 
 const moreProjects = [
@@ -788,11 +788,11 @@ export default function Portfolio() {
               >
                 <Badge variant="outline" className="text-xs">
                   <Award className="h-3 w-3 mr-1" />
-                  Tech Manager 2024
+                   Full-Stack Developer
                 </Badge>
                 <Badge variant="outline" className="text-xs">
                   <BookOpen className="h-3 w-3 mr-1" />
-                  BCA Student
+                  Tech Enthusiast
                 </Badge>
               </motion.div>
             </div>
