@@ -91,16 +91,16 @@ const projects = [
     live: "https://aspire-u.vercel.app/",
   },
   {
-    title: "Ecommerce Website",
+    title: "Amit-azure",
     description:
-      "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
-    image: "/placeholder.svg?height=200&width=300",
+      "This web application is a professional portfolio / landing page hosted on Vercel that showcases your mobile shop web application, demonstrating a modern, responsive design with clean UI. It serves as a front-end presentation of your store, features, and offerings — perfect for impressing visitors and potential customers. The site likely includes sections such as:",
+    image: "/amit.png?height=200&width=300",
     tech: ["React", "Redux Toolkit", "JavaScript"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/mdshahbaz-9/mobile-store-webapp",
+    live: "https://amit-azure.vercel.app/",
   },
   // {
-  //   title: "Ecommerce Website",
+  //   title: "Amit-azure",
   //   description:
   //     "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
   //   image: "/placeholder.svg?height=200&width=300",
