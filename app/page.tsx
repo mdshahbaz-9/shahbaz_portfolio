@@ -91,7 +91,7 @@ const projects = [
     live: "https://aspire-u.vercel.app/",
   },
   {
-    title: "Amit-azure",
+    title: "Amit-azure", 
     description:
       "This web application is a professional portfolio / landing page hosted on Vercel that showcases your mobile shop web application, demonstrating a modern, responsive design with clean UI. It serves as a front-end presentation of your store, features, and offerings — perfect for impressing visitors and potential customers. The site likely includes sections such as:",
     image: "/amit.png?height=200&width=300",
@@ -99,15 +99,15 @@ const projects = [
     github: "https://github.com/mdshahbaz-9/mobile-store-webapp",
     live: "https://amit-azure.vercel.app/",
   },
-  // {
-  //   title: "Amit-azure",
-  //   description:
-  //     "Built an Ecommerce website using ReactJs and Redux Toolkit with cart functionality.",
-  //   image: "/placeholder.svg?height=200&width=300",
-  //   tech: ["React", "Redux Toolkit", "JavaScript"],
-  //   github: "#",
-  //   live: "#",
-  // },
+  {
+    title: "collegeXP",
+    description:
+      "🎓 A gamified MERN stack platform that guides students from coding basics to placement through 7 progressive levels with XP, streaks, badges, and an admin monitoring panel.",
+    image: "/collegexp.png?height=200&width=300",
+    tech: ["React.js, Node.js, Express.js, MongoDB, JWT, bcrypt, Axios"],
+    github: "https://github.com/mdshahbaz-9/CollegeXP-Gamified-Student-Placement-Portal-",
+    live: "https://college-xp.vercel.app/",
+  },
   // {
   //   title: "Ecommerce Website",
   //   description:
@@ -305,7 +305,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20">
                   <img
-                    src="/shz.jpg?height=320&width=320"
+                    src="/shz.jpeg?height=320&width=320"
                     alt="Md Shahbaz Profile"
                     className="w-full h-full object-cover"
                   />
